@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class TowerController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public enum TOWERSTATE
+    {
+        IDLE = 0,
+        ATTACK,
+        UPGRADE,
+        NONE
+    }
+    public TOWERSTATE towerState = TOWERSTATE.NONE;
+
+
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         

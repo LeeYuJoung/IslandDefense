@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EnemyMaker : MonoBehaviour
 {
+    public ShipMaker shipMaker;
     public GameObject enemyPrefab;
+    public GameObject ship;
 
     public float currentTime;
     public float spawnCoolTime = 2.0f;
@@ -15,14 +17,18 @@ public class EnemyMaker : MonoBehaviour
 
     void Start()
     {
-        
+        shipMaker = GameObject.Find("ShipMaker").GetComponent<ShipMaker>();
+        ship = GameObject.Find("Ship");
     }
 
 
     void Update()
     {
         if (enemyCount >= enemyMaxCount)
+        {
             isRunning = false;
+            Destroy(ship, 1.0f);
+        }
 
         if (isRunning)
         {
@@ -48,5 +54,6 @@ public class EnemyMaker : MonoBehaviour
         isRunning = true;
         GameManager.Instance().level += 1;
         GameManager.Instance().StageLevelUP();
+        shipMaker.SpawnShip();
     }
 }
