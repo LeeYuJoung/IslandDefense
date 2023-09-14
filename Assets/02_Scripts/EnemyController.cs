@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     public List<Transform> targetPos;
     public Transform currentTargetPos;
 
-    public float speed = 5.0f;
+    public float speed = 1.0f;
     public float rotateSpeed = 10.0f;
     public int enemyHP = 100;
 
@@ -29,7 +29,6 @@ public class EnemyController : MonoBehaviour
         currentTargetPos = targetPos[0];
 
         float distance = Vector3.Distance(transform.position, currentTargetPos.position);
-        Debug.Log(distance);
 
         Vector3 dir = currentTargetPos.position - transform.position;
         dir.y = 0;

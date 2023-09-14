@@ -64,10 +64,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f63398edaf0c348996f4b8b91fda15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: 0}
   targetPos: []
   currentTargetPos: {fileID: 0}
-  characterController: {fileID: 0}
-  speed: 2
+  speed: 1.5
   rotateSpeed: 10
   enemyHP: 100
 --- !u!1001 &9216889447245501279
@@ -81,6 +81,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FootmanPolyart
       objectReference: {fileID: 0}
+    - target: {fileID: 928723032, guid: 44e54165d41e34c41ba73a629630ce03, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 280a229d73b7a10499dbbccf94c0ea97, type: 2}
     - target: {fileID: 928723033, guid: 44e54165d41e34c41ba73a629630ce03, type: 3}
       propertyPath: m_RootOrder
       value: 0
