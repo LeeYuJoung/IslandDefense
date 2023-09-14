@@ -11,9 +11,15 @@ public class TowerController : MonoBehaviour
         UPGRADE,
         NONE
     }
-    public TOWERSTATE towerState = TOWERSTATE.NONE;
+    public TOWERSTATE towerState = TOWERSTATE.IDLE;
 
+    public Transform firePos;
+    public GameObject targetEnemy;
+    public GameObject bulletPrefab;
 
+    public int attackDamage;
+    public float currentTime;
+    public float attackSpeed;
 
     void Start()
     {
@@ -22,6 +28,28 @@ public class TowerController : MonoBehaviour
 
     void Update()
     {
-        
+        switch(towerState)
+        {
+            case TOWERSTATE.IDLE:
+
+                break;
+            case TOWERSTATE.ATTACK:
+                currentTime += Time.deltaTime;
+
+                if(currentTime > attackSpeed)
+                {
+                    GameObject _bullet = Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+                    
+                }
+                break;
+            case TOWERSTATE.UPGRADE: 
+
+                break;
+            case TOWERSTATE.NONE:
+
+                break;
+            default:
+                break;
+        }
     }
 }

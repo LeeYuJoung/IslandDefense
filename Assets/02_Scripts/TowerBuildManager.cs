@@ -20,16 +20,19 @@ public class TowerBuildManager : MonoBehaviour
 
             if(Physics.Raycast(ray, out hit))
             {
-                switch (hit.collider.tag)
+                if(hit.collider != null)
                 {
-                    case "Block":
-                        GameObject _tower = Instantiate(towerPrefab);
-                        _tower.transform.position = hit.collider.transform.position;
-                        break;
-                    case "Tower":
-                        break;
-                    default:
-                        break;
+                    switch (hit.collider.gameObject.tag)
+                    {
+                        case "Block":
+                            GameObject _tower = Instantiate(towerPrefab) as GameObject;
+                            _tower.transform.position = hit.collider.transform.position;
+                            break;
+                        case "Tower":
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         }
