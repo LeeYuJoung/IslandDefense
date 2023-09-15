@@ -79,7 +79,7 @@ public class EnemyController : MonoBehaviour
                 // Dead Effect
                 // Dead Sound 
                 // Coin UP
-                Destroy(gameObject);
+                Destroy(gameObject, 1.0f);
             }
         }
     }

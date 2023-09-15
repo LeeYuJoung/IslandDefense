@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class EnemyDetecting : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public List<GameObject> enemies;
+    public TowerController towerController;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(enemies.Count < 0 && enemies[0] == null)
+        {
+            enemies.RemoveAt(0);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            towerController.targetEnemy = other.gameObject;
+            towerController.towerState = TowerController.TOWERSTATE.ATTACK;
+            enemies.Add(other.gameObject);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            enemies.Remove(other.gameObject);
+        }
     }
 }
