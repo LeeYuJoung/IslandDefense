@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class EnemyController : MonoBehaviour
     public NavMeshAgent agent;
     public Animator animator;
     public Transform _base;
+    public GameObject deadEffect;
+
+    public Slider hpSlider;
 
     public List<Transform> targetPos;
     public Transform currentTargetPos;
@@ -20,6 +24,7 @@ public class EnemyController : MonoBehaviour
     public float speed = 1.0f;
     public float rotateSpeed = 10.0f;
     public int enemyHP = 100;
+    public int maxHP = 100;
 
     private bool isDead = false;
 
@@ -71,14 +76,14 @@ public class EnemyController : MonoBehaviour
         if (!isDead)
         {
             enemyHP -= damage;
+            hpSlider.value = (float)enemyHP / maxHP;
 
             if(enemyHP <= 0)
             {
                 isDead = true;
-                animator.SetTrigger("DIE");
-                // Dead Sound 
+                deadEffect.SetActive(true);
                 // Coin UP
-                Destroy(gameObject);
+                Destroy(gameObject, 0.25f);
             }
         }
     }

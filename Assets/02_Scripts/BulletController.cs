@@ -10,22 +10,22 @@ public class BulletController : MonoBehaviour
 
     void Update()
     {
-        if(target != null)
+        StartCoroutine(Crash());
+    }
+
+    IEnumerator Crash()
+    {
+        if (target != null)
         {
             transform.LookAt(target.transform);
             transform.Translate(Vector3.forward * speed * Time.deltaTime);
+
+            yield return new WaitForSeconds(0.15f);
+            target.GetComponent<EnemyController>().OnDamege(bulletDamage);
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(gameObject);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            other.GetComponent<EnemyController>().OnDamege(bulletDamage);
             Destroy(gameObject);
         }
     }

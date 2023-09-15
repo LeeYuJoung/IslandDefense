@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TowerBuildManager : MonoBehaviour
 {
     public GameObject towerPrefab;
+    public Canvas canvas;
+    public GameObject upgradePanel;
+
+    public float mousePushTime;
 
     void Start()
     {
@@ -29,6 +34,18 @@ public class TowerBuildManager : MonoBehaviour
                             _tower.transform.position = hit.collider.transform.position;
                             break;
                         case "Tower":
+                            //if(mousePushTime > 2.0f)
+                            //{
+                            //    mousePushTime = 0;
+
+                            //    upgradePanel = hit.transform.GetChild(0).GetChild(0).gameObject;
+                            //    upgradePanel.SetActive(true);
+                            //}
+
+                            canvas = hit.collider.gameObject.GetComponentInChildren<Canvas>();
+                            upgradePanel = canvas.transform.GetChild(0).gameObject;
+                            upgradePanel.SetActive(true);
+
                             break;
                         default:
                             break;

@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 4458445124252350}
   m_Layer: 0
   m_Name: SCALED
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 65226378942130296}
   m_Layer: 0
   m_Name: HM_cannon_1
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 136174928833267862}
   m_Layer: 0
   m_Name: Tower_Bug 2
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

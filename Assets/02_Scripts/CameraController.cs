@@ -33,9 +33,9 @@ public class CameraController : MonoBehaviour
         {
             Transform cam = Camera.main.transform;
 
-            if(Camera.main.fieldOfView <= 20 )
+            if(Camera.main.fieldOfView <= 30 )
             {
-                Camera.main.fieldOfView = 20;
+                Camera.main.fieldOfView = 30;
             }
             else if(Camera.main.fieldOfView >= 60)
             {

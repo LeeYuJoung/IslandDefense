@@ -48,6 +48,8 @@ public class TowerController : MonoBehaviour
 
                     if (currentTime > attackSpeed)
                     {
+                        currentTime = 0;
+
                         GameObject _bullet = Instantiate(bulletPrefab, firePos.position, firePos.rotation);
                         _bullet.GetComponent<BulletController>().target = targetEnemy;
                         _bullet.GetComponent<BulletController>().bulletDamage = attackDamage;
