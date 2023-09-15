@@ -76,10 +76,9 @@ public class EnemyController : MonoBehaviour
             {
                 isDead = true;
                 animator.SetTrigger("DIE");
-                // Dead Effect
                 // Dead Sound 
                 // Coin UP
-                Destroy(gameObject, 1.0f);
+                Destroy(gameObject);
             }
         }
     }
