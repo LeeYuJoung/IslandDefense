@@ -10,17 +10,25 @@ public class GameManager : MonoBehaviour
         return _instance;
     }
 
+    public GameObject speedActivePanel;
+    public GameObject powerActivePanel;
+    public GameObject rangeActivePanel;
+
     public int level = 1;
 
     public int currentHP = 100;
     public int maxHP = 100;
-    public int coin = 0;
+    public int coin = 100;
 
     public int enemyHP = 100;
     public float enemySpeed = 1;
     public int enemyPower = 5;
     public int enemyMaxCount = 2;
     public int killCount = 0;
+
+    public int speedPrice = 50;
+    public int powerPrice = 50;
+    public int rangePrice = 100;
 
     void Start()
     {
@@ -32,7 +40,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        SpeedLevelUP();
+        PowerLevelUP();
+        RangeLevelUP();
     }
 
     public void StageLevelUP()
@@ -42,5 +52,41 @@ public class GameManager : MonoBehaviour
         enemyPower += 5;
         enemyMaxCount *= 2;
         killCount = 0;
+    }
+
+    public void SpeedLevelUP()
+    {
+        if(coin >= speedPrice)
+        {
+            speedActivePanel.SetActive(false);
+        }
+        else
+        {
+            speedActivePanel.SetActive(true);
+        }
+    }
+
+    public void PowerLevelUP()
+    {
+        if(coin >= powerPrice)
+        {
+            powerActivePanel.SetActive(false);
+        }
+        else
+        {
+            powerActivePanel.SetActive(true);
+        }
+    }
+
+    public void RangeLevelUP()
+    {
+        if(coin >= rangePrice)
+        {
+            rangeActivePanel.SetActive(false);
+        }
+        else
+        {
+            rangeActivePanel.SetActive(true);
+        }
     }
 }

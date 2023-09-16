@@ -33,7 +33,7 @@ public class TowerBuildManager : MonoBehaviour
                             _tower.transform.position = hit.collider.transform.position;
                             break;
                         case "Tower":
-                            Debug.Log(upgradePanel.activeSelf);
+                            UpgradeManager.Instance().upgradeTarget = hit.collider.gameObject;
 
                             if (upgradePanel.activeSelf)
                             {

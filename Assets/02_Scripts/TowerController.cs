@@ -21,7 +21,11 @@ public class TowerController : MonoBehaviour
 
     public int attackDamage = 10;
     public float currentTime;
-    public float attackSpeed = 3.0f;
+    public float attackSpeed = 1.5f;
+
+    public int speedLevel = 1;
+    public int powerLevel = 1;
+    public int rangeLevel = 1;
 
     void Start()
     {

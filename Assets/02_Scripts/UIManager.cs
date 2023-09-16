@@ -21,6 +21,10 @@ public class UIManager : MonoBehaviour
     public Text cointText;
     public Text levelText;
 
+    public Text speedLevel;
+    public Text powerLevel;
+    public Text rangeLevel;
+
     void Start()
     {
         if (_instance == null)
@@ -93,5 +97,20 @@ public class UIManager : MonoBehaviour
         {
             optionPanel.SetActive(true);
         }
+    }
+
+    public void SpeedLevelChange(TowerController _target)
+    {
+        speedLevel.text = string.Format("LV.{0:00}", _target.speedLevel);
+    }
+
+    public void PowerLevelChange(TowerController _target)
+    {
+        powerLevel.text = string.Format("LV.{0:00}", _target.powerLevel);
+    }
+
+    public void RangeLevelChange(TowerController _target)
+    {
+        rangeLevel.text = string.Format("LV.{0:00}", _target.rangeLevel);
     }
 }
