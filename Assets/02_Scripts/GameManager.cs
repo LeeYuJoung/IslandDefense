@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     public int enemyMaxCount = 2;
     public int killCount = 0;
 
+    public int towerPrice = 20;
+    public int arrowTowerPrice = 50;
+
     public int speedPrice = 50;
     public int powerPrice = 50;
     public int rangePrice = 100;
@@ -52,6 +55,16 @@ public class GameManager : MonoBehaviour
         enemyPower += 5;
         enemyMaxCount *= 2;
         killCount = 0;
+    }
+
+    public void TowerBuy()
+    {
+
+    }
+
+    public void ArrowTowerBuy()
+    {
+
     }
 
     public void SpeedLevelUP()

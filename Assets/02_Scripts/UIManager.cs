@@ -128,22 +128,26 @@ public class UIManager : MonoBehaviour
         {
             stopButton.GetComponent<Button>().image.sprite = stopOn;
             Time.timeScale = 0;
+            return;
         }
         else
         {
             stopButton.GetComponent<Button>().image.sprite = stopOff;
             Time.timeScale = 1;
+            return;
         }
     }
 
     public void DoubleSpeed()
     {
-        Time.timeScale = 2;
+        if(Time.timeScale != 0)
+            Time.timeScale = 2;
     }
 
     public void SlowSpeed()
     {
-        Time.timeScale = 1;
+        if(Time.timeScale != 0)
+            Time.timeScale = 1;
     }
 
     public void SpeedLevelChange(TowerController _target)
