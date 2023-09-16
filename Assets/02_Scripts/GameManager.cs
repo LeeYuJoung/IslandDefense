@@ -18,7 +18,9 @@ public class GameManager : MonoBehaviour
 
     public int enemyHP = 100;
     public float enemySpeed = 1;
+    public int enemyPower = 5;
     public int enemyMaxCount = 2;
+    public int killCount = 0;
 
     void Start()
     {
@@ -37,6 +39,8 @@ public class GameManager : MonoBehaviour
     {
         enemyHP *= 2;
         enemySpeed *= 1.1f;
+        enemyPower += 5;
         enemyMaxCount *= 2;
+        killCount = 0;
     }
 }

@@ -29,7 +29,7 @@ public class ShipController : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(enemyMaker != null)
+        if(enemyMaker != null && other.CompareTag("EnemyMaker"))
         {
             enemyMaker.isRunning = true;
             speed = 0;

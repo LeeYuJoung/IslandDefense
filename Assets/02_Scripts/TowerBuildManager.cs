@@ -6,7 +6,6 @@ using UnityEngine;
 public class TowerBuildManager : MonoBehaviour
 {
     public GameObject towerPrefab;
-    public Canvas canvas;
     public GameObject upgradePanel;
 
     public float mousePushTime;
@@ -34,17 +33,18 @@ public class TowerBuildManager : MonoBehaviour
                             _tower.transform.position = hit.collider.transform.position;
                             break;
                         case "Tower":
-                            //if(mousePushTime > 2.0f)
-                            //{
-                            //    mousePushTime = 0;
+                            Debug.Log(upgradePanel.activeSelf);
 
-                            //    upgradePanel = hit.transform.GetChild(0).GetChild(0).gameObject;
-                            //    upgradePanel.SetActive(true);
-                            //}
-
-                            canvas = hit.collider.gameObject.GetComponentInChildren<Canvas>();
-                            upgradePanel = canvas.transform.GetChild(0).gameObject;
-                            upgradePanel.SetActive(true);
+                            if (upgradePanel.activeSelf)
+                            {
+                                upgradePanel.SetActive(false);
+                                hit.transform.Find("AttackRange").GetComponent<MeshRenderer>().enabled = false;
+                            }
+                            else
+                            {
+                                upgradePanel.SetActive(true);
+                                hit.transform.Find("AttackRange").GetComponent<MeshRenderer>().enabled = true;
+                            }
 
                             break;
                         default:

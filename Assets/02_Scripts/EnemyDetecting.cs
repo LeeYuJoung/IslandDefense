@@ -35,6 +35,7 @@ public class EnemyDetecting : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             enemies.Remove(other.gameObject);
+            towerController.towerState = TowerController.TOWERSTATE.IDLE;
         }
     }
 }

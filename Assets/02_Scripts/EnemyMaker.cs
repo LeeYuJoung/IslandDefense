@@ -18,7 +18,6 @@ public class EnemyMaker : MonoBehaviour
     void Start()
     {
         shipMaker = GameObject.Find("ShipMaker").GetComponent<ShipMaker>();
-        ship = GameObject.Find("Ship");
     }
 
 
@@ -26,8 +25,9 @@ public class EnemyMaker : MonoBehaviour
     {
         if (enemyCount >= enemyMaxCount)
         {
+            ship = GameObject.Find("Ship");
             isRunning = false;
-            Destroy(ship, 1.0f);
+            Destroy(ship, 0.5f);
         }
 
         if (isRunning)
@@ -41,7 +41,7 @@ public class EnemyMaker : MonoBehaviour
                 _enemy.name = "Enemy_" + enemyCount;
                 _enemy.GetComponent<EnemyController>().enemyHP = GameManager.Instance().enemyHP;
                 _enemy.GetComponent<EnemyController>().speed = GameManager.Instance().enemySpeed;
-                enemyMaxCount = GameManager.Instance().enemyMaxCount;
+                _enemy.GetComponent<EnemyController>().power = GameManager.Instance().enemyPower; 
                 enemyCount++;
             }
         }
@@ -51,9 +51,11 @@ public class EnemyMaker : MonoBehaviour
     public void InitEnemyMaker()
     {
         enemyCount = 0;
-        isRunning = true;
         GameManager.Instance().level += 1;
+        UIManager.Instance().LevelTextChange();
         GameManager.Instance().StageLevelUP();
+        enemyMaxCount = GameManager.Instance().enemyMaxCount;
         shipMaker.SpawnShip();
+        Time.timeScale = 1;
     }
 }

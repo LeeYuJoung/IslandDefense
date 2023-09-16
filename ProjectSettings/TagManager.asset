@@ -10,6 +10,8 @@ TagManager:
   - Castle
   - Tank
   - Tower
+  - FxTemporaire
+  - EnemyMaker
   layers:
   - Default
   - TransparentFX

@@ -21,7 +21,11 @@ public class EnemyController : MonoBehaviour
     public Transform[] attackPos = new Transform[8];
     public Transform currentAttackPos;
 
+    public float currentTime;
+    public float attackCoolTime = 2.0f;
+
     public float speed = 1.0f;
+    public int power;
     public float rotateSpeed = 10.0f;
     public int enemyHP = 100;
     public int maxHP = 100;
@@ -49,9 +53,15 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (targetPos.Count == 0)
+        currentTime += Time.deltaTime;
+
+        if (targetPos.Count == 0 )
         {
-            OnAttack();
+            if(currentTime > attackCoolTime)
+            {
+                currentTime = 0;
+                OnAttack();
+            }
             return;
         }
 
@@ -82,8 +92,16 @@ public class EnemyController : MonoBehaviour
             {
                 isDead = true;
                 deadEffect.SetActive(true);
-                // Coin UP
+                GameManager.Instance().coin += 50;
+                UIManager.Instance().CoinTextChange();
                 Destroy(gameObject, 0.25f);
+
+                EnemyMaker _enemyMaker = GameObject.Find("EnemyMaker").GetComponent<EnemyMaker>();
+                GameManager.Instance().killCount++;
+                if (GameManager.Instance().killCount >= GameManager.Instance().enemyMaxCount)
+                {
+                    UIManager.Instance().LevelUp();
+                }
             }
         }
     }
@@ -100,5 +118,8 @@ public class EnemyController : MonoBehaviour
         Vector3 dir = transform.localRotation.eulerAngles;
         dir.x = 0;
         transform.localRotation = Quaternion.Euler(dir);
+
+        GameManager.Instance().currentHP -= power;
+        UIManager.Instance().PlayerHPBar();
     }
 }
