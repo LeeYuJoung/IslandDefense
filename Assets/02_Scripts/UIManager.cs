@@ -25,17 +25,24 @@ public class UIManager : MonoBehaviour
     public Text powerLevel;
     public Text rangeLevel;
 
+    public GameObject soundButton;
+    public Sprite soundOff;
+    public Sprite soundOn;
+
+    public GameObject stopButton;
+    public Sprite stopOn;
+    public Sprite stopOff;
+
+    public GameObject optionButton;
+    public Sprite optionOn;
+    public Sprite optionOff;
+
     void Start()
     {
         if (_instance == null)
         {
             _instance = this;
         }
-    }
-
-    void Update()
-    {
-        
     }
 
     public void StartButton()
@@ -91,12 +98,52 @@ public class UIManager : MonoBehaviour
     {
         if (optionPanel.activeSelf)
         {
+            optionButton.GetComponent<Button>().image.sprite = optionOff;
             optionPanel.SetActive(false);
         }
         else
         {
+            optionButton.GetComponent<Button>().image.sprite = optionOn;
             optionPanel.SetActive(true);
         }
+    }
+
+    public void SoundOnOff()
+    {
+        if (AudioListener.volume == 0)
+        {
+            AudioListener.volume = 1;
+            soundButton.GetComponent<Button>().image.sprite = soundOn;
+        }
+        else
+        {
+            AudioListener.volume = 0;
+            soundButton.GetComponent<Button>().image.sprite = soundOff;
+        }
+    }
+
+    public void StopOnOff()
+    {
+        if(Time.timeScale == 1 || Time.timeScale == 2)
+        {
+            stopButton.GetComponent<Button>().image.sprite = stopOn;
+            Time.timeScale = 0;
+        }
+        else
+        {
+            stopButton.GetComponent<Button>().image.sprite = stopOff;
+            Time.timeScale = 1;
+        }
+    }
+
+    public void DoubleSpeed()
+    {
+        Time.timeScale = 2;
+    }
+
+    public void SlowSpeed()
+    {
+        Time.timeScale = 1;
     }
 
     public void SpeedLevelChange(TowerController _target)
