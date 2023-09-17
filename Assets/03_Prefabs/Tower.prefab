@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1064613597699706169}
   - component: {fileID: 7676293403177527493}
   - component: {fileID: 5533797520123804643}
-  - component: {fileID: 5606790970089621557}
   - component: {fileID: 5090860750437571124}
+  - component: {fileID: 5606790970089621557}
   m_Layer: 2
   m_Name: AttackRange
   m_TagString: Untagged
@@ -99,20 +99,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5606790970089621557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1089026978260852940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08131db636fc3df40ac9a7f4a43aa4cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemies: []
-  towerController: {fileID: -6360735973481286473}
 --- !u!54 &5090860750437571124
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,6 +115,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5606790970089621557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089026978260852940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08131db636fc3df40ac9a7f4a43aa4cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies: []
+  towerController: {fileID: -6360735973481286473}
 --- !u!1 &4341552195270050007
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,7 +22,7 @@ public class UpgradeManager : MonoBehaviour
 
     public void Update()
     {
-        if(upgradeTarget != null)
+        if(upgradeTarget != null && upgradeTarget.CompareTag("Tower"))
         {
             UIManager.Instance().SpeedLevelChange(upgradeTarget.GetComponent<TowerController>());
             UIManager.Instance().PowerLevelChange(upgradeTarget.GetComponent<TowerController>());
@@ -64,5 +64,15 @@ public class UpgradeManager : MonoBehaviour
             UIManager.Instance().RangeLevelChange(upgradeTarget.GetComponent<TowerController>());
             upgradeTarget.transform.GetChild(1).transform.localScale += new Vector3(1, 0, 1);
         }
+    }
+
+    public void SaleButton()
+    {
+        Destroy(upgradeTarget);
+    }
+
+    public void RocketSaleButton()
+    {
+        Destroy(upgradeTarget);
     }
 }

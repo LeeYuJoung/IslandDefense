@@ -9,6 +9,7 @@ public class TowerBuildManager : MonoBehaviour
     public GameObject arrowTowerPrefab;
 
     public GameObject towerBuyPanel;
+    public GameObject rocketSalePanel;
     public GameObject upgradePanel;
 
     public RaycastHit hit;
@@ -61,7 +62,20 @@ public class TowerBuildManager : MonoBehaviour
 
                             break;
                         case "ArrowTower":
-                                break;
+                            UpgradeManager.Instance().upgradeTarget = hit.collider.gameObject;
+
+                            if (rocketSalePanel.activeSelf)
+                            {
+                                rocketSalePanel.SetActive(false);
+                                hit.transform.Find("AttackRange").GetComponent<MeshRenderer>().enabled = false;
+                            }
+                            else
+                            {
+                                rocketSalePanel.SetActive(true);
+                                hit.transform.Find("AttackRange").GetComponent<MeshRenderer>().enabled = true;
+                            }
+
+                            break;
                         default:
                             break;
                     }
