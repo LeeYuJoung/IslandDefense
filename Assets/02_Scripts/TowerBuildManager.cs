@@ -6,7 +6,13 @@ using UnityEngine;
 public class TowerBuildManager : MonoBehaviour
 {
     public GameObject towerPrefab;
+    public GameObject arrowTowerPrefab;
+
+    public GameObject towerBuyPanel;
     public GameObject upgradePanel;
+
+    public RaycastHit hit;
+    public RaycastHit blockHit;
 
     public float mousePushTime;
 
@@ -19,18 +25,25 @@ public class TowerBuildManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            RaycastHit hit;
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if(Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit))
             {
                 if(hit.collider != null)
                 {
                     switch (hit.collider.gameObject.tag)
                     {
                         case "Block":
-                            GameObject _tower = Instantiate(towerPrefab) as GameObject;
-                            _tower.transform.position = hit.collider.transform.position;
+                            blockHit = hit;
+                            if (!towerBuyPanel.activeSelf)
+                            {
+                                towerBuyPanel.SetActive(true);
+                            }
+                            else
+                            {
+                                towerBuyPanel.SetActive(false);
+                            }
+
                             break;
                         case "Tower":
                             UpgradeManager.Instance().upgradeTarget = hit.collider.gameObject;
@@ -47,11 +60,31 @@ public class TowerBuildManager : MonoBehaviour
                             }
 
                             break;
+                        case "ArrowTower":
+                                break;
                         default:
                             break;
                     }
                 }
             }
         }
+    }
+
+    public void TowerCreate()
+    {
+        GameManager.Instance().coin -= GameManager.Instance().towerPrice;
+        UIManager.Instance().CoinTextChange();
+
+        GameObject _tower = Instantiate(towerPrefab) as GameObject;
+        _tower.transform.position = blockHit.collider.transform.position;
+    }
+
+    public void ArrowTowerCreate()
+    {
+        GameManager.Instance().coin -= GameManager.Instance().arrowTowerPrice;
+        UIManager.Instance().CoinTextChange();
+
+        GameObject _arrowTower = Instantiate(arrowTowerPrefab) as GameObject;
+        _arrowTower.transform.position = blockHit.collider.transform.position + new Vector3(0, 0.25f, 0);
     }
 }

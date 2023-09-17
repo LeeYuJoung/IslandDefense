@@ -12,6 +12,7 @@ TagManager:
   - Tower
   - FxTemporaire
   - EnemyMaker
+  - ArrowTower
   layers:
   - Default
   - TransparentFX

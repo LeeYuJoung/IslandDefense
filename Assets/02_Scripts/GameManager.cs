@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
         return _instance;
     }
 
+    public GameObject towerPossiblePanel;
+    public GameObject arrowetowerPossiblePanel;
+
     public GameObject speedActivePanel;
     public GameObject powerActivePanel;
     public GameObject rangeActivePanel;
@@ -43,6 +46,9 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        TowerBuy();
+        ArrowTowerBuy();
+
         SpeedLevelUP();
         PowerLevelUP();
         RangeLevelUP();
@@ -59,12 +65,26 @@ public class GameManager : MonoBehaviour
 
     public void TowerBuy()
     {
-
+        if(coin >= towerPrice)
+        {
+            towerPossiblePanel.SetActive(false);
+        }
+        else
+        {
+            towerPossiblePanel.SetActive(true);
+        }
     }
 
     public void ArrowTowerBuy()
     {
-
+        if(coin >= arrowTowerPrice)
+        {
+            arrowetowerPossiblePanel.SetActive(false);
+        }
+        else
+        {
+            arrowetowerPossiblePanel.SetActive(true);
+        }
     }
 
     public void SpeedLevelUP()

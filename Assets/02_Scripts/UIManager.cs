@@ -86,7 +86,6 @@ public class UIManager : MonoBehaviour
     public void LevelUp()
     {
         levelUpPanel.SetActive(true);
-        Time.timeScale = 0;
     }
 
     public void LevelTextChange()

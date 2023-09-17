@@ -40,6 +40,7 @@ public class EnemyMaker : MonoBehaviour
                 GameObject _enemy = Instantiate(enemyPrefab, transform.position, transform.rotation);
                 _enemy.name = "Enemy_" + enemyCount;
                 _enemy.GetComponent<EnemyController>().enemyHP = GameManager.Instance().enemyHP;
+                _enemy.GetComponent<EnemyController>().maxHP = GameManager.Instance().enemyHP;
                 _enemy.GetComponent<EnemyController>().speed = GameManager.Instance().enemySpeed;
                 _enemy.GetComponent<EnemyController>().power = GameManager.Instance().enemyPower; 
                 enemyCount++;
@@ -56,6 +57,5 @@ public class EnemyMaker : MonoBehaviour
         GameManager.Instance().StageLevelUP();
         enemyMaxCount = GameManager.Instance().enemyMaxCount;
         shipMaker.SpawnShip();
-        Time.timeScale = 1;
     }
 }
