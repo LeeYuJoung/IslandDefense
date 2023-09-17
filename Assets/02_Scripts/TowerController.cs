@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerController : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class TowerController : MonoBehaviour
     public GameObject muzzlePos;
     public GameObject targetEnemy;
     public GameObject bulletPrefab;
+    public AudioClip explosionSound;
+
+    public Slider coolTimeSlider;
 
     public int attackDamage = 10;
     public float currentTime;
@@ -29,15 +33,19 @@ public class TowerController : MonoBehaviour
 
     void Start()
     {
+        towerState = TOWERSTATE.IDLE;
         enemyDetecting = GetComponentInChildren<EnemyDetecting>();
     }
 
     void Update()
     {
-        switch(towerState)
+        switch (towerState)
         {
             case TOWERSTATE.IDLE:
-                if(enemyDetecting.enemies.Count > 0 && targetEnemy != null)
+                coolTimeSlider.value = (float)currentTime / attackSpeed;
+                currentTime += Time.deltaTime;
+
+                if (enemyDetecting.enemies.Count > 0 && targetEnemy != null)
                 {
                     targetEnemy = enemyDetecting.enemies[0];
                     towerState = TOWERSTATE.ATTACK;
@@ -48,12 +56,14 @@ public class TowerController : MonoBehaviour
                 if(targetEnemy != null)
                 {
                     muzzlePos.transform.LookAt(targetEnemy.transform.position);
+                    coolTimeSlider.value = (float)currentTime / attackSpeed;
                     currentTime += Time.deltaTime;
 
                     if (currentTime > attackSpeed)
                     {
                         currentTime = 0;
 
+                        GameObject.Find("BackgroundSound").GetComponent<AudioSource>().PlayOneShot(explosionSound);
                         GameObject _bullet = Instantiate(bulletPrefab, firePos.position, firePos.rotation);
                         _bullet.GetComponent<BulletController>().target = targetEnemy;
                         _bullet.GetComponent<BulletController>().bulletDamage = attackDamage;

@@ -195,6 +195,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   _base: {fileID: 0}
   deadEffect: {fileID: 1473159738564287189}
+  attackSound: {fileID: 8300000, guid: 7da9d961f6ea82c45b5aa66398b1ad68, type: 3}
   hpSlider: {fileID: 3039491262552887940}
   targetPos: []
   currentTargetPos: {fileID: 0}

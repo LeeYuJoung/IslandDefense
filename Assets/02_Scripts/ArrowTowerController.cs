@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ArrowTowerController : MonoBehaviour
 {
     public GameObject rocketPrefab;
     public GameObject rocketPos;
     public Transform firePos;
+
     public Collider[] _enemyColliders;
+    public AudioClip explosionSound;
+
+    public Slider coolTimeSlider;
 
     public int targetIdx = 0;
     public float currentTime;
@@ -20,15 +25,18 @@ public class ArrowTowerController : MonoBehaviour
 
     void Update()
     {
+        RocketTarget();
+
+        coolTimeSlider.value = (float)currentTime / attackTime;
         currentTime += Time.deltaTime;
 
         if(currentTime >= attackTime)
         {
-            currentTime = 0;
-            RocketTarget();
-
             if (_enemyColliders.Length != 0)
             {
+                currentTime = 0;
+
+                GameObject.Find("BackgroundSound").GetComponent<AudioSource>().PlayOneShot(explosionSound);
                 GameObject _rocket = Instantiate(rocketPrefab, firePos.position, firePos.rotation);
                 _rocket.GetComponent<ArrowController>().target = _enemyColliders[targetIdx].gameObject;
 

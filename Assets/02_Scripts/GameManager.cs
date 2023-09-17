@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     public int killCount = 0;
 
     public int towerPrice = 20;
-    public int arrowTowerPrice = 50;
+    public int arrowTowerPrice = 100;
 
     public int speedPrice = 50;
     public int powerPrice = 50;

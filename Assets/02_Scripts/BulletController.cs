@@ -5,6 +5,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public GameObject target;
+
     public float speed = 10.0f;
     public int bulletDamage;
 

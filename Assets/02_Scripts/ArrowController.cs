@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArrowController : MonoBehaviour
 {
     public GameObject target;
-    public float speed = 20.0f;
+    public float speed = 10.0f;
 
     void Update()
     {

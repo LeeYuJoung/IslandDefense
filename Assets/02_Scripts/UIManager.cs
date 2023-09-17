@@ -17,6 +17,9 @@ public class UIManager : MonoBehaviour
     public GameObject levelUpPanel;
     public GameObject optionPanel;
 
+    public GameObject towerBuyPanel;
+    public GameObject towerLevelUpPaenl;
+
     public Slider playerHP;
     public Text cointText;
     public Text levelText;
@@ -85,6 +88,9 @@ public class UIManager : MonoBehaviour
 
     public void LevelUp()
     {
+        towerBuyPanel.SetActive(false);
+        towerLevelUpPaenl.SetActive(false);
+
         levelUpPanel.SetActive(true);
     }
 

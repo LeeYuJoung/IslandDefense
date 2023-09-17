@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     public Animator animator;
     public Transform _base;
     public GameObject deadEffect;
+    public AudioClip attackSound;
 
     public Slider hpSlider;
 
@@ -113,6 +114,7 @@ public class EnemyController : MonoBehaviour
         agent.SetDestination(currentAttackPos.position);
 
         animator.SetBool("ATTACK", true);
+        GameObject.Find("BackgroundSound").GetComponent<AudioSource>().PlayOneShot(attackSound);
 
         transform.LookAt(_base.position);
         Vector3 dir = transform.localRotation.eulerAngles;
