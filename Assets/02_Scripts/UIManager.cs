@@ -76,6 +76,9 @@ public class UIManager : MonoBehaviour
 
         if(GameManager.Instance().currentHP <= 0)
         {
+            towerBuyPanel.SetActive(false);
+            towerLevelUpPaenl.SetActive(false);
+
             gameOverPanel.SetActive(true);
             Time.timeScale = 0;
         }
