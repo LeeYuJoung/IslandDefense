@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028328, g: 0.22571322, b: 0.30692163, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2666,6 +2666,7 @@ GameObject:
   - component: {fileID: 156041701}
   - component: {fileID: 156041703}
   - component: {fileID: 156041702}
+  - component: {fileID: 156041704}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -2735,6 +2736,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156041700}
   m_CullTransparentMesh: 1
+--- !u!114 &156041704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156041700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.8627451}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &157662929
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22182,6 +22198,7 @@ GameObject:
   - component: {fileID: 1396840119}
   - component: {fileID: 1396840121}
   - component: {fileID: 1396840120}
+  - component: {fileID: 1396840122}
   m_Layer: 5
   m_Name: Title (1)
   m_TagString: Untagged
@@ -22251,6 +22268,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396840118}
   m_CullTransparentMesh: 1
+--- !u!114 &1396840122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396840118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.8627451}
+  m_EffectDistance: {x: 5, y: -5}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &1398042792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27569,6 +27601,8 @@ MonoBehaviour:
   gameOverPanel: {fileID: 0}
   levelUpPanel: {fileID: 0}
   optionPanel: {fileID: 0}
+  towerBuyPanel: {fileID: 0}
+  towerLevelUpPaenl: {fileID: 0}
   playerHP: {fileID: 0}
   cointText: {fileID: 0}
   levelText: {fileID: 0}
