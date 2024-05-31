@@ -1,7 +1,7 @@
 # 🏝 IalandDefense
 <div>
- <img width="370" src="https://github.com/LeeYuJoung/IslandDefense/blob/main/Intro_Image.png">
- <img width="370" src="https://github.com/LeeYuJoung/IslandDefense/blob/main/InGame_Image.png">
+ <img width="400" src="https://github.com/LeeYuJoung/IslandDefense/blob/main/Intro_Image.png">
+ <img width="400" src="https://github.com/LeeYuJoung/IslandDefense/blob/main/InGame_Image.png">
 </div>
 
 *** 
@@ -16,7 +16,7 @@
 ![](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 
 ## 💡 Points
-
++ **CharacterController**
 
 ## 🔗 Links
  📺 [youtube : IalandDefense 플레이 영상](https://youtu.be/Spuw6vd1zcg)
