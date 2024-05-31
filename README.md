@@ -1,5 +1,8 @@
 # 🏝 IalandDefense
-<img src="https://github.com/LeeYuJoung/IslandDefense/blob/main/Intro_Image.png" width="550" height="325"/><img src="https://github.com/LeeYuJoung/IslandDefense/blob/main/InGame_Image.png" width="550" height="325"/>
+<div>
+ <img width="500" src="https://github.com/LeeYuJoung/IslandDefense/blob/main/Intro_Image.png">
+ <img width="500" src="https://github.com/LeeYuJoung/IslandDefense/blob/main/InGame_Image.png">
+</div>
 
 *** 
 📅 **개발 기간 : 2023.09.11 ~ 2023.09.17**
