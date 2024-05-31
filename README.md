@@ -16,7 +16,8 @@
 ![](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
 
 ## 💡 Points
-+ **CharacterController**
++ **CharacterController** 사용해서 Enemy 움직임 구현
++ 섬의 각 모서리 위치값을 List에 저장해 List 순서대로 Enemy가 이동 할 수 있도록 구현
 
 ## 🔗 Links
  📺 [youtube : IalandDefense 플레이 영상](https://youtu.be/Spuw6vd1zcg)
