@@ -1,7 +1,7 @@
 # 🏝 IalandDefense
 <div>
- <img src="https://github.com/LeeYuJoung/IslandDefense/blob/main/Intro_Image.png" width="45%">
- <img src="https://github.com/LeeYuJoung/IslandDefense/blob/main/InGame_Image.png" width="45%">
+ <img src="https://github.com/LeeYuJoung/IslandDefense/blob/main/Intro_Image.png" width="49%">
+ <img src="https://github.com/LeeYuJoung/IslandDefense/blob/main/InGame_Image.png" width="49%">
 </div>
 
 *** 
