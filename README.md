@@ -22,6 +22,6 @@
 ## 🔗 Links
  📺 [youtube : IalandDefense 플레이 영상](https://youtu.be/Spuw6vd1zcg)
  
- 📒 [Notion : IalandDefense 개발문서](https://www.notion.so/ISLAND-DEFENSE-b26a7bc5a7b34560ac348edfd0a2cf1d)
+ 📒 [Notion : IalandDefense 개발문서](https://stump-lifter-1b4.notion.site/Island-Defense-1ad55d2c7953813aa683c618edbce7d6)
 
  🎮 [Game Download](https://drive.google.com/file/d/1CD7B87jdGnCyqZfPnj1Jb4VPl1XxYv4i/view)
